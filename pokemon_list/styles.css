@@ -1,0 +1,173 @@
+body {
+  display: flex;
+  justify-content: center;
+  font-family: Ubuntu;
+  background-color: rgb(255, 230, 0);
+}
+
+.container_pokemon {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  max-width: 800px;
+
+  @media (max-width: 850px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (max-width: 600px) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.search_pokemon {
+  grid-column: span 3;
+  padding: 0.8rem;
+  text-align: center;
+  border: none;
+  padding: 1rem;
+  margin: 1rem;
+  box-shadow: 0px 0px 15px rgb(121, 118, 118);
+
+  @media (max-width: 850px) {
+    grid-column: span 2;
+  }
+
+  @media (max-width: 600px) {
+    z-index: 1;
+  }
+}
+
+.search_pokemon::placeholder {
+  font-size: 1rem;
+  color: rgb(185, 175, 175);
+
+  @media (max-width: 600px) {
+    font-size: 0.8rem;
+  }
+}
+
+.card_pokemon {
+  margin: 1rem;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  min-height: 275px;
+  width: 225px;
+  box-shadow: 0px 0px 15px rgb(161, 159, 159);
+
+  img {
+    display: flex;
+    justify-self: center;
+    align-self: center;
+  }
+}
+
+.id_pokemon {
+  position: absolute;
+  color: rgb(59, 50, 50);
+  bottom: 0;
+  left: 0;
+  background-color: rgb(180, 175, 175);
+  padding: 0.2rem 0.6rem;
+  font-size: small;
+  font-weight: 500;
+}
+
+.img_pokemon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-color: lightgray;
+  min-height: 50%;
+}
+
+.info_pokemon {
+  display: flex;
+  flex-direction: column;
+}
+
+.name_pokemon {
+  font-weight: 500;
+  font-size: large;
+  margin-left: 7%;
+
+  p {
+    margin-top: 8%;
+    margin-bottom: 0;
+  }
+}
+
+.type_pokemon {
+  display: flex;
+  font-size: small;
+  margin-left: 7%;
+  color: rgb(116, 105, 105);
+
+  p {
+    border: 1px rgb(116, 105, 105) solid;
+    border-radius: 12%;
+    padding: 0.1rem 0.2rem;
+    margin: 0.1rem;
+  }
+}
+
+.evol_pokemon {
+  margin: 2.5% 0 2.5% 7%;
+  border-left: 4px brown solid;
+  p {
+    font-size: larger;
+    font-weight: 400;
+    padding: 0.1rem 0.2rem;
+    margin: 0.1rem;
+  }
+  p:first-child {
+    font-size: small;
+    color: rgb(116, 105, 105);
+  }
+}
+
+.left_ear {
+  position: fixed;
+  z-index: 1;
+  width: 100px;
+  height: 100px;
+  background-color: black;
+  top: -50px;
+  left: -50px;
+  rotate: 45deg;
+}
+
+.right_ear {
+  position: fixed;
+  z-index: 1;
+  width: 100px;
+  height: 100px;
+  background-color: black;
+  top: -50px;
+  right: -50px;
+  rotate: 45deg;
+}
+
+.left_cheek {
+  position: fixed;
+  z-index: 1;
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  border-radius: 50%;
+  bottom: -50px;
+  left: -50px;
+}
+
+.right_cheek {
+  position: fixed;
+  z-index: 1;
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  border-radius: 50%;
+  bottom: -50px;
+  right: -50px;
+}
