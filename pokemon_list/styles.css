@@ -52,7 +52,6 @@ body {
   background-color: white;
   display: flex;
   flex-direction: column;
-  min-height: 275px;
   width: 225px;
   box-shadow: 0px 0px 15px rgb(161, 159, 159);
 
@@ -80,7 +79,6 @@ body {
   justify-content: center;
   position: relative;
   background-color: lightgray;
-  min-height: 50%;
 }
 
 .info_pokemon {
@@ -128,29 +126,28 @@ body {
   }
 }
 
-.left_ear {
+.ear {
   position: fixed;
   z-index: 1;
   width: 100px;
   height: 100px;
   background-color: black;
   top: -50px;
+  rotate: 45deg;
+  @media (max-width: 600px) {
+    z-index: -1;
+  }
+}
+
+.ear.left {
   left: -50px;
-  rotate: 45deg;
 }
 
-.right_ear {
-  position: fixed;
-  z-index: 1;
-  width: 100px;
-  height: 100px;
-  background-color: black;
-  top: -50px;
+.ear.right {
   right: -50px;
-  rotate: 45deg;
 }
 
-.left_cheek {
+.cheek {
   position: fixed;
   z-index: 1;
   width: 100px;
@@ -158,16 +155,33 @@ body {
   background-color: red;
   border-radius: 50%;
   bottom: -50px;
+
+  @media (max-width: 600px) {
+    z-index: -1;
+  }
+}
+
+.cheek.left {
   left: -50px;
 }
 
-.right_cheek {
-  position: fixed;
-  z-index: 1;
-  width: 100px;
-  height: 100px;
-  background-color: red;
-  border-radius: 50%;
-  bottom: -50px;
+.cheek.right {
   right: -50px;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(120px);
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.reveal {
+  transform: translateY(120px);
+  animation: slideUp linear;
+  animation-timeline: view();
+  animation-range: entry 20% cover 50%;
 }
