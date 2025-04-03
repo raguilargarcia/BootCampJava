@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let cadena = "Hola";
+
+      //CADENA INVERTIDA
+
+      let cadenaInvertida = [];
+      const invertirCadena = function (string) {
+        for (let i = string.length; i >= 0; i--) {
+          cadenaInvertida += string.charAt(i);
+        }
+        return cadenaInvertida;
+      };
+      console.log(invertirCadena(cadena));
+
+      //CONTAR VOCALES
+
+      let vocales = ["a", "e", "i", "o", "u"];
+      const contarVocales = function (string) {
+        let contador = 0;
+        string = string.toLowerCase();
+        vocales.forEach((element) => {
+          for (let i = 0; i <= string.length; i++) {
+            if (string[i] == element) {
+              contador++;
+            }
+          }
+        });
+        return contador;
+      };
+      console.log(contarVocales(cadena));
+    </script>
+  </head>
+  <body></body>
+</html>

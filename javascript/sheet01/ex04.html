@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let a = 0;
+      let b = 33;
+      let c = -42;
+
+      const positiveOrNegative = function (num) {
+        if (num > 0) {
+          return "positivo";
+        } else if (num < 0) {
+          return "negativo";
+        } else {
+          return "cero";
+        }
+      };
+      console.log(`El número ${a} es ${positiveOrNegative(a)}.
+El número ${b} es ${positiveOrNegative(b)}.
+El número ${c} es ${positiveOrNegative(c)}.`);
+    </script>
+  </head>
+  <body></body>
+</html>
