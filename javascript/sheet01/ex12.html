@@ -1,11 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    
-</body>
+    <style>
+      input {
+        margin-bottom: 10px;
+        display: block;
+      }
+
+      div {
+        margin-top: 20px;
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        let operando1;
+        let operando2;
+        let resultado = document.getElementById("resultado");
+
+        document.getElementById("sumar").addEventListener("click", function () {
+          operando1 = document.getElementById("operando1").value;
+          operando2 = document.getElementById("operando2").value;
+          if (isNaN(operando1) || isNaN(operando2)) {
+            resultado.textContent =
+              "Por favor, introduce valores numéricos válidos.";
+          } else {
+            resultado.textContent = `El resultado de la suma es: ${
+              parseInt(operando1) + parseInt(operando2)
+            }`;
+          }
+        });
+
+        document
+          .getElementById("restar")
+          .addEventListener("click", function () {
+            operando1 = document.getElementById("operando1").value;
+            operando2 = document.getElementById("operando2").value;
+            if (isNaN(operando1) || isNaN(operando2)) {
+              resultado.textContent =
+                "Por favor, introduce valores numéricos válidos.";
+            } else {
+              resultado.textContent = `El resultado de la resta es: ${
+                parseInt(operando1) - parseInt(operando2)
+              }`;
+            }
+          });
+
+        document
+          .getElementById("multiplicar")
+          .addEventListener("click", function () {
+            operando1 = document.getElementById("operando1").value;
+            operando2 = document.getElementById("operando2").value;
+            if (isNaN(operando1) || isNaN(operando2)) {
+              resultado.textContent =
+                "Por favor, introduce valores numéricos válidos.";
+            } else {
+              resultado.textContent = `El resultado de la multiplicación es: ${
+                parseInt(operando1) * parseInt(operando2)
+              }`;
+            }
+          });
+
+        document
+          .getElementById("dividir")
+          .addEventListener("click", function () {
+            operando1 = document.getElementById("operando1").value;
+            operando2 = document.getElementById("operando2").value;
+            if (isNaN(operando1) || isNaN(operando2)) {
+              resultado.textContent =
+                "Por favor, introduce valores numéricos válidos.";
+            } else {
+              resultado.textContent = `El resultado de la división es: ${
+                parseInt(operando1) / parseInt(operando2)
+              }`;
+            }
+          });
+      });
+    </script>
+  </head>
+  <body>
+    <input id="operando1" type="text" />
+    <input id="operando2" type="text" />
+    <div>
+      <button id="sumar">Suma</button>
+      <button id="restar">Resta</button>
+      <button id="multiplicar">Multiplicación</button>
+      <button id="dividir">División</button>
+    </div>
+    <p id="resultado"></p>
+  </body>
 </html>

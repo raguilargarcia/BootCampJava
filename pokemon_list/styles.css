@@ -115,13 +115,13 @@ body {
   margin: 2.5% 0 2.5% 7%;
   border-left: 4px brown solid;
   p {
-    font-size: larger;
-    font-weight: 400;
+    font-size: x-large;
+    font-weight: 200;
     padding: 0.1rem 0.2rem;
-    margin: 0.1rem;
+    margin: 0.3rem;
   }
   p:first-child {
-    font-size: small;
+    font-size: medium;
     color: rgb(116, 105, 105);
   }
 }
