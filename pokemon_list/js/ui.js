@@ -83,6 +83,25 @@ export function renderPokemon(pokemon, evol) {
   pokemonList.appendChild(pokemonItem);
 }
 
+let buscador = document.getElementById("search_pokemon");
+buscador.addEventListener("keyup", function () {
+  let filter = buscador.value.toUpperCase();
+  let pokemonList = document.getElementById("container_pokemon");
+  let pokemonItems = pokemonList.getElementsByTagName("section");
+
+  for (let i = 0; i < pokemonItems.length; i++) {
+    let pokemonName = pokemonItems[i].getElementsByTagName("p")[0];
+    if (pokemonName) {
+      let txtValue = pokemonName.textContent;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        pokemonItems[i].style.display = "";
+      } else {
+        pokemonItems[i].style.display = "none";
+      }
+    }
+  }
+});
+
 export function showError(message) {
   const errorContainer = document.getElementById("error");
   errorContainer.textContent = message;
